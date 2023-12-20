@@ -1,4 +1,4 @@
-![image](https://github.com/AlgumCorrupto/Gran-Turismo4I-CSS/assets/112904295/9886b75d-1352-4d92-8e63-2f745c64d6cb)
+![image](https://github.com/AlgumCorrupto/Gran-Turismo4I-CSS/assets/112904295/f627d522-8e3c-4be7-8239-bed8cd4f1b74)
 
 <h1>Gran Turismo 4 CSS</h1>
 <h2>Intro</h2>
