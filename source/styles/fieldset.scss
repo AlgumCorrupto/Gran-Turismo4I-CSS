@@ -1,0 +1,7 @@
+@use '../configs.scss' as *;
+
+fieldset {
+    background-color: #d6d6d6;
+    box-shadow: inset 1px 1px 10px -4px #000000;
+    border-style: none;
+}

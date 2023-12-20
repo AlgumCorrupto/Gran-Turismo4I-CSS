@@ -8,6 +8,7 @@ tab-option {
     font-family: "SF medium";
     --sat: var(--uncheckedSat);
     margin-right: -5px;
+    display: inline-block;
     
     color: var(--text);
     font-weight: 500;

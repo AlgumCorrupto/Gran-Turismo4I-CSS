@@ -1,0 +1,44 @@
+@use '../configs.scss' as *;
+
+popup-window {
+    @include colors();
+    margin:auto;
+    width: 60%;
+    height: auto;
+    display:   block;
+    font-family: 'SF medium';
+    border-radius: 0.7em;
+    color: var(--text);
+    --sat: var(--uncheckedSat);
+    box-shadow: 
+      0 -0.5em 0.5em transparent,
+      0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+    .popup-title {
+        background: linear-gradient(0deg, rgba(130,130,130,1) 0%, rgba(204,204,204,1) 100%);
+        width:100%;
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.3em;
+        border-radius: inherit;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 1px solid #222;
+        border-top: 1px solid #fff;
+    }
+    .popup-body {
+        background-color: #ddd;
+        width:80%;
+        padding-left:5%;
+        padding-right: 15%;
+        padding-top: 0.6em;
+        padding-bottom: 0.5em;
+        border-radius: inherit;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+
+        border: 0.5px solid #555;
+        border-top: 0px;
+    }
+}

@@ -4,6 +4,8 @@ input[type=text] {
     padding: 0.3em 0.6em;
     margin: 8px 0;
     box-sizing: border-box;
+    border: 0.5px solid #555;
+    border-right: none;
     border-bottom: none;
     border-radius: 0.2em;
     box-shadow: inset 3px 3px 3px -4px #000000;
