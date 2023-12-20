@@ -1,0 +1,128 @@
+@use '../configs.scss' as *;
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    appearance: none;
+    //appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+  }
+
+  input[type="checkbox"] {
+    @include colors();
+    content:"";
+    --sat: var(--uncheckedSat);
+    font-family: "SF medium";
+    color: var(--text);
+    letter-spacing: -0.025em;
+    background-color: var(--clr);
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    border-radius: 0.125em;
+    border: none;
+    box-shadow: 
+      0 -0.5em 0.5em transparent,
+      0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+
+    border-style: solid;
+    border-width: 0.0125em;
+    border-color: var(--text);//hsla(var(--hue), var(--sat), 40%, 0.3);
+
+    &::before, &::after {
+        content: "";
+        inset: 0;
+        position: absolute;
+        border-radius: 0.125em;
+
+    }
+    // darkening
+    &::before {
+      background-image: 
+        radial-gradient(ellipse, 
+          hsla(var(--hue), 100%, 90%, .8) 20%,
+          transparent 50%,
+          transparent 200%
+        ),
+        linear-gradient(90deg, 
+          hsl(0deg, 0%, 25%) -10%, 
+          transparent 30%, 
+          transparent 70%, 
+          hsl(0deg, 0%, 25%) 110%
+        );
+      box-shadow: 
+        inset 0 .25em .75em hsla(0deg, 0%, 0%, 0.8),
+        inset 0 -.05em .2em rgba(255, 255, 255, 0.4),
+        inset 0 -1px 3px hsla(var(--hue), 80%, 50%, .75);
+      background-blend-mode: overlay;
+      background-repeat: no-repeat;
+      background-size: 200% 80%, cover;
+      background-position: center 220%;
+      mix-blend-mode: overlay;
+      filter: blur(calc(var(--blur) * 0.5));
+    }
+    
+    // reflection
+    &::after {
+      background: linear-gradient(
+        180deg, 
+        hsla(var(--hue2),100%,90%,.9), 
+        hsla(var(--hue2),calc(var(--sat2)*0.7),50%,.75) 40%, 
+        transparent 80%
+      );
+      top: 0.055em;
+      left: 0.050em;
+      right: 0.050em;
+      bottom: 0.50em;
+      border-radius: 0.050em;
+      filter: blur(var(--blur));
+      mix-blend-mode: screen;
+    }
+    
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      box-shadow: 
+        0 -0.2em 1em hsla(var(--hue2), 70%, 80%, 0.3),
+        0 0.5em 1.5em hsla(var(--hue), 70%, 80%, 0.5),
+        0 0.25em 0.3em -0.2em hsl(var(--hue) 90% 70%), 
+        0 0.25em 0.5em hsla(var(--hue),20%,30%, 0.2),
+        inset 0 -2px 2px rgba(255,255,255,0.2);
+        background-position: center calc( var(--gradoffset) - 0.75em );
+    }
+    &:checked{
+      --sat: var(--checkedSat);
+     
+
+    }
+    &:checked::before {
+      mix-blend-mode:normal;
+      //background-color: transparent;
+      background-position: 70% center;
+      background-size: 1.3em;
+      box-shadow: none;
+      background-image: url(../assets/checkamrk.svg);
+      //left: 0.25em;
+      //right: 0.25em;
+      //bottom: 0.25em;
+      //top: 0.25em; 
+      padding-bottom: 18px;
+      padding-left: 20px;
+      transform: translate(-0.25em, -0.35em);
+    }
+  }
+
+#checkmark {
+  stroke: var(--text)
+}

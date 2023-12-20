@@ -1,0 +1,120 @@
+@use '../configs.scss' as *;
+
+select{
+    /* Add if not using autoprefixer */
+    appearance: none;
+    //appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+}
+
+
+select {
+   @include colors();
+    content:"";
+    --sat: var(--uncheckedSat);
+    font-family: "SF medium";
+    font-size: inherit;
+    color: var(--text);
+    letter-spacing: -0.025em;
+    background-color: var(--clr);
+    //width: 1em;
+    //height: 1em;
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    border-radius: 0.5em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    box-shadow: 
+      0 -0.5em 0.5em transparent,
+      0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+
+    border-style: solid;
+    border-width: 0.0125em;
+    border-color: var(--text);
+
+    
+    // reflection
+      background: linear-gradient(
+        180deg, 
+        hsla(var(--hue2),100%,100%,.9), 
+        hsla(var(--hue2),calc(var(--sat2)*0.7),75%,.75) 40%, 
+        transparent 80%
+      );
+      //top: 0.0125em;
+      //left: 0.1em;
+      //right: 0.1em;
+      //bottom: 0.36em;
+      filter: blur(var(--blur));
+      mix-blend-mode: normal;
+}
+
+
+
+.aqua-selector {
+  &::after{
+    @include colors();
+    content:"\25B4";
+    text-align: center;
+    --sat: var(--checkedSat);
+    font-family: "SF medium";
+    color: var(--text);
+    letter-spacing: -0.025em;
+    background-color: var(--clr);
+    //width: 1em;
+    //height: 1em;
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 
+      0 -0.5em 0.5em transparent,
+      0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    border-style: solid;
+    border-width: 0.0125em;
+    border-color: var(--text);
+
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1.1px;
+    // reflection
+      background: linear-gradient(
+        180deg, 
+        hsla(var(--hue2),100%,90%,.9), 
+        hsla(var(--hue2),calc(var(--sat2)*0.7),75%,.75) 40%, 
+        transparent 80%
+      );
+      //top: 0.0125em;
+      //left: 0.1em;
+      //right: 0.1em;
+      //bottom: 0.36em;
+      filter: blur(var(--blur));
+      mix-blend-mode: normal;
+      display: inline-block; 
+      transform: translate(-4.5px, 0);
+  }
+
+  
+}

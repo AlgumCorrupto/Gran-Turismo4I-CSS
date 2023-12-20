@@ -1,0 +1,147 @@
+@use '../configs.scss' as *;
+tab-option {
+    @include colors();
+    font-size: 6vw;
+    @media screen and ( min-width: 660px ) {
+      font-size: 16px;
+    }
+    font-family: "SF medium";
+    --sat: var(--uncheckedSat);
+    margin-right: -5px;
+    
+    color: var(--text);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    background-color: var(--clr);
+    background-image:   
+      linear-gradient(180deg, 
+        var(--clr2) var(--gradgap), 
+        transparent calc(100% - var(--gradgap))
+      );
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    padding: 0.5em 1.0em;
+    border-radius: 0.7em;
+    &[state="first"] {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        &::before, &::after {
+            content: "";
+            inset: 0;
+            position: absolute;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+    }
+    &[state="middle"] {
+        border-radius: 0;
+        &::before, &::after {
+            content: "";
+            inset: 0;
+            position: absolute;
+            border-radius: 0;
+          }
+    }
+    &[state="single"] {
+        border-radius: 0.7em;
+        &::before, &::after {
+            content: "";
+            inset: 0;
+            position: absolute;
+            border-radius: 0.7em;
+          }
+    }
+    &[state="last"] {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        &::before, &::after {
+            content: "";
+            inset: 0;
+            position: absolute;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+    }
+    
+    
+    box-shadow: 
+      0 -0.5em 0.5em transparent,
+      0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+  
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+
+    border-style: solid;
+    border-width: 0.0125em;
+    border-color: var(--text);
+  
+    &::before, &::after {
+      content: "";
+      inset: 0;
+      position: absolute;
+      border-radius: 0.7em;
+    }
+    
+    // darkening
+    &::before {
+      background-image: 
+        radial-gradient(ellipse, 
+          hsla(var(--hue), 100%, 90%, .8) 20%,
+          transparent 50%,
+          transparent 200%
+        ),
+        linear-gradient(90deg, 
+          hsl(0deg, 0%, 25%) -10%, 
+          transparent 30%, 
+          transparent 70%, 
+          hsl(0deg, 0%, 25%) 110%
+        );
+      box-shadow: 
+        inset 0 .25em .75em hsla(0deg, 0%, 0%, 0.8),
+        inset 0 -.05em .2em rgba(255, 255, 255, 0.4),
+        inset 0 -1px 3px hsla(var(--hue), 80%, 50%, .75);
+      background-blend-mode: overlay;
+      background-repeat: no-repeat;
+      background-size: 200% 80%, cover;
+      background-position: center 220%;
+      mix-blend-mode: overlay;
+      filter: blur(calc(var(--blur) * 0.5));
+    }
+    
+    // reflection
+    &::after {
+      background: linear-gradient(
+        180deg, 
+        hsla(var(--hue2),100%,90%,.9), 
+        hsla(var(--hue2),calc(var(--sat2)*0.7),50%,.75) 40%, 
+        transparent 80%
+      );
+      top: 0.075em;
+      left: 0.75em;
+      right: 0.75em;
+      bottom: 1.4em;
+      filter: blur(var(--blur));
+      mix-blend-mode: screen;
+    }
+    
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      box-shadow: 
+        0 -0.2em 1em hsla(var(--hue2), 70%, 80%, 0.3),
+        0 0.5em 1.5em hsla(var(--hue), 70%, 80%, 0.5),
+        0 0.25em 0.3em -0.2em hsl(var(--hue) 90% 70%), 
+        0 0.25em 0.5em hsla(var(--hue),20%,30%, 0.2),
+        inset 0 -2px 2px rgba(255,255,255,0.2);
+      background-position: center calc( var(--gradoffset) - 0.75em );
+    }
+    &[active="true"] {
+        --sat: var(--checkedSat);
+    }
+    
+  }

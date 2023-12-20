@@ -1,0 +1,45 @@
+@use '../configs.scss' as *;
+progress {
+    @include colors();
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-bottom: none;
+    border-radius: 0.5em;
+    box-shadow: inset 3px 3px 3px -4px #000000;
+    font-size: 14px;
+
+    background-color: #fff;
+
+    font-family: "SF medium";
+    --sat: var(--checkedSat);
+    color: var(--text);
+    letter-spacing: -0.025em;
+    &::placeholder {
+        color: var(--text2);
+    }
+
+    &::focus,
+    &::active{
+        border-style: none;
+    }
+
+    &::-moz-progress-bar{
+        // reflection
+        background: linear-gradient(
+        180deg, 
+        hsla(var(--hue2),100%,100%,.0), 
+        hsla(var(--hue2),100%,75%,1) 40%, 
+        transparent 80%
+        );
+        background-repeat: repeat;
+        background-size:contain;
+        //top: 0.0125em;
+        //left: 0.1em;
+        //right: 0.1em;
+        //bottom: 0.36em;
+        filter: blur(var(--blur));
+        mix-blend-mode: normal;
+        border-top-right-radius: 0.5em;
+        border-top-left-radius: 0.5em;
+    }
+}

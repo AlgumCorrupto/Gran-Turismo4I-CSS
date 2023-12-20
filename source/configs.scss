@@ -1,0 +1,31 @@
+body {
+    background-color: #ddd;
+}
+@font-face {
+    font-family: "SF medium";
+    src: url(../assets/sfdisplaymedium.OTF);
+}
+
+:root {
+    --hue: 25deg;
+    --checkedSat: 100%;
+    --uncheckedSat: 0%;
+    --blur: 0px;
+}
+
+@mixin colors(){
+    --hue2: calc(var(--hue) + 15deg);
+    --sat2: calc(var(--sat) + 10%);
+    --text: hsla(var(--hue), calc(var(--sat) - 30%), 20%, .9);
+    --text2: hsla(var(--hue), calc(var(--sat) - 30%), 40%, .9);
+    --clr: hsl(var(--hue) var(--sat) 90%);  
+    --clr2: hsl(var(--hue2) var(--sat2) 85%);
+    --gradoffset: 45%;
+    --gradgap: 30%;
+}
+
+.cursor {
+    filter: drop-shadow(-2px 4px 1px #000000);
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#00000000"/>
+  <g filter="url(#filter0_d_2_3)">
+    <path id="checkmark" d="M19 52.5L40.6245 79.4105C41.0539 79.9448 41.8814 79.8986 42.2485 79.3196L80.5 19" stroke="black" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <defs>
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="4"/>
+    
+      
+  </defs>
+</svg>

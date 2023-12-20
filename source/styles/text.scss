@@ -1,0 +1,20 @@
+@use '../configs.scss' as *;
+input[type=text] {
+    @include colors();
+    padding: 0.3em 0.6em;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-bottom: none;
+    border-radius: 0.2em;
+    box-shadow: inset 3px 3px 3px -4px #000000;
+    font-size: 14px;
+    outline: none;
+
+    font-family: "SF medium";
+    --sat: var(--uncheckedSat);
+    color: var(--text);
+    letter-spacing: -0.025em;
+    &::placeholder {
+        color: var(--text2);
+    }
+  }
