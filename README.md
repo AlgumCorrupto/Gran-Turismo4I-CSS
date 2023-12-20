@@ -5,4 +5,5 @@
 <p>I've made this stylesheet using SCSS using the <a href="https://blog.logrocket.com/the-definitive-guide-to-scss"/> this guide as a reference </a>. You can monitor <code>./source/index.scss</code> 
 using <code>sass --watch source/index.scss build/index.css</code> or just yoink the index.css file inside the build directory, also i've worked on some custom elements like, the custom tab element, that can be found inside <code>source/scripts/</code> directory
 </p>
-![image](https://github.com/AlgumCorrupto/Gran-Turismo4I-CSS/assets/112904295/c6594454-6d36-431c-bcff-19379301b6f9)
+![image](https://github.com/AlgumCorrupto/Gran-Turismo4I-CSS/assets/112904295/99e37bb9-9669-4a73-be49-e4f164ca8bc0)
+
